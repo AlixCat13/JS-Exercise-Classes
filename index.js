@@ -44,31 +44,27 @@ class Person {
   constructor (name, age) {
     this.name = name;
     this.age = age;
+    this.stomach = stomach;
     this.canEatNoMoreThan10Foods = true;
     this.canEatMoreThan10Foods = false;
   }
 
- 
 
   eat(someFood) {
     let stomach = [];
     for (let i = 0; i <= 10; i++) {
       stomach.push(1,2,3,4,5,6,7,8,9,10);
-    } if (someFood <= 1){
-      return true;
-    }
+    };
     return stomach;
-  }
+  };
 
   Poop() {
-    let stomach = [];
     return stomach.splice(0, stomach.length);
-  }
+  };
 
   toString() {
     return `${this.name}, ${this.age}`;
-  }
-
+  };
 }
 
 /*
@@ -91,11 +87,11 @@ class Car {
     this.milesPerGallon = milesPerGallon;
     this.tank = 0;
     this.odometer = 0;
-  }
+  };
 
   fill(gallons) {
     return this.tank += gallons;
-  }
+  };
 
   drive(distance) {
     this.odometer += distance;
@@ -125,10 +121,10 @@ class Lambdasian {
     this.name = attr.name;
     this.age = attr.age;
     this.location = attr.location;
-  }
+  };
   speak() {
     return `Hello my name is ${this.name}, I am from ${this.location}`
-  }
+  };
 
 }
 
@@ -154,13 +150,13 @@ class Instructor extends Lambdasian {
     this.specialty = attr.specialty;
     this.favLanguage = attr.favLanguage;
     this.catchPhrase = attr.catchPhrase;
-  }
+  };
   demo(subject) {
     return `Today we are learning about ${subject}`
-  }
+  };
   grade(student, subject) {
     return `${student.name} receives a perfect score on ${subject}`
-  }
+  };
 }
 
 /*
@@ -184,22 +180,24 @@ class Student extends Lambdasian {
     this.previousBackground = attr.previousBackground;
     this.className = attr.className;
     this.favSubjects = attr.favSubjects;
-  }
+  };
+}
+  let favSubjects = ['HTML', 'CSS', 'JS'];
 
   listSubjects(favSubjects) {
-    return `Loving ${favSubjects}!`
-  }
+    return `Loving ${this.favSubjects[i]}!`
+  };
 
-  PRAssignment(subject) {
+  PRAssignment(name, subject) {
     return `${this.name} has submitted a PR for ${subject}`
-  }
+  };
 
-  sprintChallenge(subject) {
+  sprintChallenge(name, subject) {
     return `${this.name} has begun a sprint challenge on ${subject}`
-  }
+  };
 
 
-}
+
 
 /*
   TASK 6
@@ -219,15 +217,15 @@ class ProjectManager extends Instructor {
     super(attr);
     this.gradClassName = attr.gradClassName;
     this.favInstructor = attr.favInstructor;
-  }
+  };
 
-  standUp(channel) {
+  standUp(name, channel) {
     return `${this.name} announces to ${channel}, @channel standby times!`
-  }
+  };
 
   debugsCode(name, subject) {
     return `${this.name} debugs ${Student.name}'s code on ${subject}`
-  }
+  };
 
 }
 
